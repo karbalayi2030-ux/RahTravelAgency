@@ -1,0 +1,61 @@
+/* متصل کردن آنلاین فونت‌های استاندارد وب شبیه به تیتراژ ضخیم و متون ساده */
+@import url('https://googleapis.com');
+
+:root {
+    --primary: #0f172a; /* آبی سرمه‌ای لوکس متمایل به تیره */
+    --accent: #d4af37;  /* طلایی درخشان شرکتی */
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+}
+
+/* اعمال فونت Calibri برای بدنه و متون عادی وب‌سایت */
+body { 
+    font-family: 'Calibri', 'Segoe UI', Tahoma, sans-serif; 
+    background-color: var(--bg); 
+    margin: 0; 
+    padding: 0; 
+    color: var(--text); 
+}
+
+/* اعمال فونت ضخیم تیتروار (جایگزین B-Titr) برای عناوین، موضوعات و متن‌های ضخیم */
+h1, h2, h3, .logo-text, .btn-hero, nav a {
+    font-family: 'Noto Naskh Arabic', 'Vazirmatn', sans-serif;
+    font-weight: 900; /* ضخامت فوق‌العاده بالا شبیه به فونت تیتر */
+    letter-spacing: -0.5px;
+}
+
+header { background: var(--primary); color: white; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+.logo-container { display: flex; align-items: center; gap: 15px; }
+.company-logo { height: 45px; width: auto; object-fit: contain; background-color: #fff; padding: 2px; border-radius: 50%; }
+.logo-text { font-size: 18px; color: var(--accent); }
+nav a { color: #f1f5f9; text-decoration: none; margin-right: 25px; font-size: 14px; transition: 0.3s; }
+nav a:hover { color: var(--accent); }
+
+.hero { background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://unsplash.com'); background-size: cover; background-position: center; height: 380px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.hero h2 { font-size: 36px; margin-bottom: 15px; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+.hero p { font-size: 19px; margin-top: 0; color: var(--accent); margin-bottom: 35px; font-family: 'Calibri', sans-serif; }
+.btn-hero { background: #22c55e; color: white; text-decoration: none; padding: 14px 40px; border-radius: 30px; transition: 0.3s; font-size: 16px; box-shadow: 0 4px 15px rgba(34,197,94,0.4); }
+.btn-hero:hover { background: #16a34a; transform: scale(1.03); }
+
+.container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+.section-title { text-align: center; margin-bottom: 40px; font-size: 28px; color: var(--primary); }
+.section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent); margin: 12px auto 0; border-radius: 2px; }
+
+.tours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.tour-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: 0.3s; border: 1px solid #f1f5f9; }
+.tour-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: var(--accent); }
+.tour-img { height: 200px; background-size: cover; background-position: center; background-color: #cbd5e1; }
+.tour-info { padding: 25px; }
+.tour-info h3 { margin: 0 0 12px 0; font-size: 20px; color: var(--primary); }
+.tour-info p { font-size: 14.5px; color: #64748b; line-height: 1.8; margin-bottom: 0; }
+.tour-meta { margin-top: 20px; padding-top: 15px; border-top: 1px solid #f1f5f9; text-align: left; }
+.badge-status { background-color: #fef3c7; color: #92400e; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+
+.info-section { background: white; padding: 40px; border-radius: 12px; margin-top: 60px; box-shadow: 0 4px 25px rgba(0,0,0,0.02); }
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 25px; }
+.info-box { background: #f8fafc; padding: 25px; border-radius: 8px; border-right: 5px solid var(--accent); }
+.info-box h3 { margin-top: 0; font-size: 18px; color: var(--primary); }
+.info-box p { font-size: 15px; color: #475569; line-height: 1.9; }
+
+footer { background: var(--primary); color: #94a3b8; text-align: center; padding: 25px; margin-top: 80px; font-size: 14px; border-top: 3px solid var(--accent); }
